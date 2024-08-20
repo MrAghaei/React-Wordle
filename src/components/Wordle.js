@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import useWordle from '../data/hooks/useWordle'
+import useWordle from '../hooks/useWordle'
+
 
 export default function Wordle({ solution }) {
     const {currentGuess, handleKeyup} = useWordle(solution)
@@ -10,6 +11,6 @@ export default function Wordle({ solution }) {
     },[handleKeyup])
   return (
 
-    <div>Wordle</div>
+    <div>current guess - {currentGuess}</div>
   )
 }
