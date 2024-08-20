@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import './App.css'
 import { useState } from 'react';
+import Wordle from './components/Wordle';
 
 function App() {
   const [solution, setSolution] = useState(null);
@@ -19,7 +20,7 @@ function App() {
   return (
     <div className="App">
       <h1>Wordle (Lingo)</h1>
-      {solution && <div>This is the solution: {solution}</div>}
+      {solution && <Wordle solution={solution}/>}
     </div>
   );
 }
