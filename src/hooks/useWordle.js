@@ -8,15 +8,31 @@ const useWordle = ()=>{
     const [isCorrect, setIsCorrect] = useState(false);
 
     const formatGuess = () => {
+        console.log('formatting guess')
 
     }
     const addNewGuess = () => {
 
     }
     const handleKeyup = ({key}) => {
+        if(key === "Enter"){
+            if(turn > 5){
+                console.log('you used all of your turn')
+                return
+            }
+            if(currentGuess.length !== 5){
+                console.log('word too short')
+                return
+            }
+            if(history.includes(currentGuess)){
+                console.log('you already tried that')
+                return
+            }
+            formatGuess()
+        }
         if(key === 'Backspace'){
             setCurrentGuess((prev)=>{
-                return prev.slice(0,    -1)
+                return prev.slice(0, -1)
             })
             return
         }
